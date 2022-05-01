@@ -32,7 +32,7 @@ def get_fruityvice_data(this_fruit_choice):
   return fruityvice_normalized
 
 #New Section to display fruityvice api response
-streamlit.header('Fruitvvice Fruit Advice!')
+streamlit.header('Fruityvice Fruit Advice!')
 try:
   fruit_choice = streamlit.text_input('What fruit would you like information about?')
   if not fruit_choice:
@@ -43,8 +43,7 @@ try:
 except URLError as e:
   streamlit.error()
 
-# don't run anything past here while we troubleshoot
-streamlit.stop()
+
 
 #import snowflake.connector
 
@@ -64,6 +63,9 @@ if streamlit.button ('Get Fruit Load List'):
 # Allow the end user to add a fruit to the list
 add_my_fruit = streamlit.text_input('What fruit would vou like to add?','jackfruit')
 streamlit.write('Thanks for adding ', add_my_fruit)
+
+# don't run anything past here while we troubleshoot
+streamlit.stop()
 
 #This will not work correctly, but just go with it for now
 my_cur.execute ("insert into fruit_load_list values ('from streamlit')")
